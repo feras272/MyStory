@@ -1,5 +1,6 @@
 package com.example.mystory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -26,11 +27,14 @@ class MainActivity : AppCompatActivity() {
         val username:String = intent.getStringExtra("username").toString()
         textViewUsername?.setText(username)
 
-        setSupportActionBar(toolbar)
+        // if null view or variable does not contain !! it will not work
+        setSupportActionBar(toolbar!!)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupDrawer()
         updateUsernameInHeader(username)
+
+        drawerClicks()
     }
 
     private fun connectViews() {
@@ -60,5 +64,24 @@ class MainActivity : AppCompatActivity() {
         val headerView = navigationView?.getHeaderView(0)
         val textViewUsername = headerView?.findViewById<TextView>(R.id.tv_email_activity_main)
         textViewUsername?.text = username
+    }
+
+    private fun drawerClicks() {
+        navigationView?.setNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.home -> {
+                    drawerLayout?.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.logout -> {
+                    finish()
+                    val intent:Intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> true
+            }
+
+        }
     }
 }

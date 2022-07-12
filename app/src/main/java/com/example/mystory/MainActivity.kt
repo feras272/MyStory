@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         updateUsernameInHeader(username)
         drawerClicks()
         openAddStoryActivity()
+        displayStories()
     }
 
     private fun connectViews() {
@@ -96,6 +97,34 @@ class MainActivity : AppCompatActivity() {
             val intent:Intent = Intent(this, AddStoryActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun displayStories() {
+        val storiesArray:ArrayList<Story> = ArrayList<Story>()
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("My Story about learning programming"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("How my story get load"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("Kotlin is fun"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+        storiesArray.add(Story("This is my first Story"
+            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+
+        val customAdapter:CustomAdapter = CustomAdapter(storiesArray, this)
+        recyclerViewStories?.adapter = customAdapter
+
     }
 
 }

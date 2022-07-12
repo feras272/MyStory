@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStory">
         <activity
+            android:name=".StoryDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddStoryActivity"
             android:exported="false" />
         <activity
@@ -23,10 +26,10 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         drawerClicks()
         openAddStoryActivity()
         displayStories()
+
     }
 
     private fun connectViews() {
@@ -102,9 +103,9 @@ class MainActivity : AppCompatActivity() {
     private fun displayStories() {
         val storiesArray:ArrayList<Story> = ArrayList<Story>()
         storiesArray.add(Story("This is my first Story"
-            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+            , "This is subtitle", getString(R.string.desc1)))
         storiesArray.add(Story("My Story about learning programming"
-            , "This is subtitle", "Welcome to my story, I will show you how I learned"))
+            , "This is subtitle", "this bootcamp teach me how I search for what I need"))
         storiesArray.add(Story("How my story get load"
             , "This is subtitle", "Welcome to my story, I will show you how I learned"))
         storiesArray.add(Story("Kotlin is fun"

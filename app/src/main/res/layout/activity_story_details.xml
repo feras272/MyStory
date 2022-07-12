@@ -6,6 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".StoryDetailsActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_activity_story_details"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/app_color"
+        app:titleTextColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_activity_story_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:layout_goneMarginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/light_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_activity_story_details"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+
+            <ImageView
+                android:id="@+id/iv_activity_story_details"
+                android:src="@drawable/person_image"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/tv_title_story_details_activity"
         android:layout_width="wrap_content"
@@ -16,6 +57,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
         android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/tv_desc_activity_story_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textStyle="italic"
+        android:textSize="16sp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="qwertyuiop[asdfghjklzxcvbnm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_activity_story_details"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,6 +58,7 @@ class CustomAdapter(val storiesList:ArrayList<Story>, val context:Context):Recyc
     }
 
     // interacting with DataHolder as MainActivity -> will return cells
+    // same as connectViews()
     class DataHolder(item:View):RecyclerView.ViewHolder(item) {
         val storyTitle:TextView = item.findViewById(R.id.tv_title_cutom_layout)
         val storySubTitle:TextView = item.findViewById(R.id.tv_subtitle_custom_layout)

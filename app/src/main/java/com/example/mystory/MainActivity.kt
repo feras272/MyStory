@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private var toolbar:Toolbar? = null
     private var navigationView:NavigationView? = null
     private var recyclerViewStories:RecyclerView? = null
+    private var buttonAddStory:FloatingActionButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,8 @@ class MainActivity : AppCompatActivity() {
 
         setupDrawer()
         updateUsernameInHeader(username)
-
         drawerClicks()
+        openAddStoryActivity()
     }
 
     private fun connectViews() {
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.tool_bar_activity_main)
         navigationView = findViewById(R.id.nav_view_activity_main)
         recyclerViewStories = findViewById(R.id.rv_stories_activity_main)
+        buttonAddStory = findViewById(R.id.fab_add_story_activity_main)
     }
 
     private fun setupDrawer() {
@@ -87,4 +90,12 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun openAddStoryActivity() {
+        buttonAddStory?.setOnClickListener {
+            val intent:Intent = Intent(this, AddStoryActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
 }

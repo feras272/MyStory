@@ -47,18 +47,19 @@ class LoginActivity : AppCompatActivity() {
             val user = User(usernameData, passwordData) // new object from the user input
 
             // array data - checking the user input data
-            for(data in userArray) {
-                if(data.username == user.username && data.password == user.password) {
-                    //Toast.makeText(this, "Welcome ${user.username}", Toast.LENGTH_LONG).show()
-                    finish()
-                    val intent:Intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("username",data.username)
-                    startActivity(intent)
-                    break
-                } else {
-                    Toast.makeText(this, "Check your data", Toast.LENGTH_LONG).show()
+                for(data in userArray) {
+                    if(data.username == user.username && data.password == user.password) {
+                        //Toast.makeText(this, "Welcome ${user.username}", Toast.LENGTH_LONG).show()
+                        finish()
+                        val intent:Intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("username",data.username)
+                        startActivity(intent)
+                        break
+                    } else {
+                        Toast.makeText(this, "Check your data", Toast.LENGTH_LONG).show()
+                    }
                 }
-            }
+
 
         }
 
@@ -71,6 +72,9 @@ class LoginActivity : AppCompatActivity() {
                 editTextUsername?.setError("Enter your username")
             } else if(editTextPassword?.text?.isEmpty() == true) {
                 editTextPassword?.error = "Enter your password"
+            }
+            else if(checkBoxTerms?.isChecked == false) {
+                Toast.makeText(this, "Terms and conditions are not yet checked", Toast.LENGTH_LONG).show()
             }
         }
 

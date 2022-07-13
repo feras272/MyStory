@@ -50,4 +50,8 @@
         I learnt in Kotlin bootcamp how to solve problems and search for the solution
         I learnt in Kotlin bootcamp how to solve problems and search for the solution
         I learnt in Kotlin bootcamp how to solve problems and search for the solution</string>
+    <string name="new_title">Enter title here..</string>
+    <string name="new_subtitle">Enter subtitle here..</string>
+    <string name="new_desc">Enter description here..</string>
+    <string name="add_story">Add Story</string>
 </resources>

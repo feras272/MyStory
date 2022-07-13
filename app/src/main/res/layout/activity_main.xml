@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DAD9D9"
     android:id="@+id/drawer_layout_activity_main"
-    android:background="#CDCDCD"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout

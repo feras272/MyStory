@@ -126,6 +126,17 @@ class MainActivity : AppCompatActivity() {
         val customAdapter:CustomAdapter = CustomAdapter(storiesArray, this)
         recyclerViewStories?.adapter = customAdapter
 
+        if(intent.getStringExtra("new_title") != null) {
+            val title = intent.getStringExtra("new_title").toString()
+            val subtitle = intent.getStringExtra("new_subtitle").toString()
+            val desc = intent.getStringExtra("new_desc").toString()
+
+            val story:Story = Story(title!!, subtitle!!, desc!!)
+
+            storiesArray.add(story)
+            customAdapter.notifyDataSetChanged()
+        }
+
     }
 
 }

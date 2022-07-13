@@ -1,5 +1,6 @@
 package com.example.mystory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -45,6 +46,12 @@ class AddStoryActivity : AppCompatActivity() {
                 }
                 else -> {
                     // add new story here
+                    this.finish()
+                    val intent:Intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("new_title", newTitle)
+                    intent.putExtra("new_subtitle", newSubtitle)
+                    intent.putExtra("new_desc", newDesc)
+                    startActivity(intent)
                 }
             }
         }

@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateUsernameInHeader(username:String) {
+    private fun updateUsernameInHeader(username:String?) {
         val headerView = navigationView?.getHeaderView(0)
         val textViewUsername = headerView?.findViewById<TextView>(R.id.tv_email_activity_main)
         textViewUsername?.text = username
